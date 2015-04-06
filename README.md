@@ -1,52 +1,25 @@
 # Final Project Assignment 2: Explore One More! (FP2) 
 DUE March 30, 2015 Monday (2015-03-30)
+Author: Darin Beaudreau
 
-This is just like FP1, but where you do a different library. (Full description of FP1 is [on Piazza.][piazza])
+### My Library: Portaudio
 
-During this assignment, you should start looking for teammates. See the project schedule [on Piazza.][schedule]
+For my second library in the exploratory phase of the final project, I decided to look into an audio library. I had no luck finding a library to play
+mp3 files, so I settled for a library to generate sounds from simple sine waves and such.
 
-Write your report right in this file. Instructions are below. You can delete them if you like, or just leave them at the bottom.
-You are allowed to change/delete anything in this file to make it into your report. It will be public.
+I don't know much about sound, so messing around with this library was difficult. I had to look for examples online to generate a simple sine wave.
+After that, I wanted to see what would happen if I generated a bunch of random sounds and played them all at once. Surprisingly, I don't notice much deviation in the sound. Some of the sounds actually sound a little harmonic.
 
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
+The idea was to use this library to generate the sounds that will be played in my final project, which is the A* pathfinding algorithm. I plan to assign a
+random sound to each tile in the grid containing the start point, destination, and obstacles, so that when the algorithm "walks" the path it creates,
+sounds play as it walks over each tile in the grid. I was also given an idea by a classmate that I may or may not use. They suggested that I assign
+"pleasant" noises to the path created, and annoying ones to all the other tiles, and then give control of the "player" to the user, so that if they walk
+over a tile not part of the path, they hear an annoying noise to let them know they're going the wrong way.
 
-This file IS your report for the assignment, including code and your story.
+This library will require some more experimentation before I know what I'm doing with it, but hopefully I can figure it out well enough to get a basic
+sound generation method working. I even had a mishap or two while testing. One of which was after repeatedly running the program, my playback device
+cut out and I was unable to hear sound from my speakers for five minutes!
 
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
-```
-#lang racket
-
-(require net/url)
-```
-
-### My Library: (library name here)
-Write what you did!
-Remember that this report must include:
- 
-* a narrative of what you did
-* the code that you wrote
-* output from your code demonstrating what it produced
-* any diagrams or figures explaining your work 
- 
-The narrative itself should be no longer than 350 words. Yes, you can add more files and link or refer to them. This is github, handling files is awesome and easy!
-
-Ask questions publicly in the Piazza group.
-
-### How to Do and Submit this assignment
-
-1. To start, [**fork** this repository][forking].
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your solution.
-  2. (This assignment is just one README.md file, so you can edit it right in github without cloning)
-  3. (You may need to clone and push if you want to add extra files)
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
-<!-- Links -->
-[piazza]: https://piazza.com/class/i55is8xqqwhmr?cid=411
-[schedule]: https://piazza.com/class/i55is8xqqwhmr?cid=453
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
+The code that I used to test the library is attached, and upon being run, generates 10 random sine waves between 300 and 800 hz, and plays them all at once.
+But don't worry! It doesn't sound THAT bad...
 
